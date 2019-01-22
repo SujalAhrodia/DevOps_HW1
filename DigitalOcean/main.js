@@ -198,7 +198,7 @@ async function provision()
 
 	// Record the droplet id that you see print out in a variable.
 	// We will use this to interact with our droplet for the next steps.
-	 //  var dropletId = 129781829
+	  var dropletId = 129788918
 
 	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	// BEFORE MOVING TO STEP FOR, REMEMBER TO COMMENT OUT THE `createDroplet()` call!!!
@@ -209,7 +209,7 @@ async function provision()
 	// https://developers.digitalocean.com/documentation/v2/#retrieve-an-existing-droplet-by-id
 	// REMEMBER POST != GET
 	// Most importantly, print out IP address!
-	// await client.dropletInfo(dropletId);
+	 await client.dropletInfo(dropletId);
 	
 	// #############################################
 	// #5 In the command line, ping your server, make sure it is alive!
