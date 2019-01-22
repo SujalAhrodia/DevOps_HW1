@@ -134,10 +134,10 @@ class DigitalOceanProvider
 		if( response.body.droplet )
 		{
 			let droplet = response.body.droplet;
-			console.log(droplet);
+			//console.log(droplet);
 
 			// Print out IP address
-			console.log(droplet.networks.v4[0].ip_address);
+			console.log("IP Address:",droplet.networks.v4[0].ip_address);
 			//159.203.45.87
 		}
 
@@ -198,7 +198,7 @@ async function provision()
 
 	// Record the droplet id that you see print out in a variable.
 	// We will use this to interact with our droplet for the next steps.
-	   var dropletId = 129460974
+	   var dropletId = 129781829
 
 	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	// BEFORE MOVING TO STEP FOR, REMEMBER TO COMMENT OUT THE `createDroplet()` call!!!
@@ -218,7 +218,7 @@ async function provision()
 	// #############################################
 	// #6 Extend the client to DESTROY the specified droplet.
 	// https://developers.digitalocean.com/documentation/v2/#delete-a-droplet
-	// await client.deleteDroplet(dropletId);
+	 await client.deleteDroplet(dropletId);
 
 	// #############################################
 	// #7 In the command line, ping your server, make sure it is dead!
