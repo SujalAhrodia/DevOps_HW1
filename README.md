@@ -14,7 +14,7 @@ Unity Id: ssujal
 :white_check_mark: Use proper and source control and configuration management practices e.g., using package managers and their associated files (package.json/requirements.txt) to declare software dependencies.
 
 ### Cloud servers:
-**[DigitalOcean](https://www.digitalocean.com/)**
+**1. [DigitalOcean](https://www.digitalocean.com/)**
 1. The steps were similar to the ones performed in the workshop, with a personalised key from DigitalOcean.
 
 2. Create a ssh key locally and register your public key to DigitalOcean.
@@ -28,7 +28,7 @@ curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer $DOTOK
 ssh root@IP adress
 ```
 ---
-**[Google Cloud Platform(GCP)](https://cloud.google.com/free/)**
+**2. [Google Cloud Platform(GCP)](https://cloud.google.com/free/)**
 
 1. [Compute Engine API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/)
 
@@ -44,4 +44,18 @@ npm init
   ...
   ...
 ```
+5. Run the following command before executing your code to install the API.
+```
+npm install @google-cloud/compute
+```
 
+6. Set configurations for the project.
+```
+gcloud config set project <project_name>
+```
+7. Log into the virtual instance via ssh.
+```
+gcloud compute ssh <instance_name>
+```
+---
+**3. ScreenCast**
