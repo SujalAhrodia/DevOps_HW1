@@ -1,6 +1,15 @@
-// Run `npm install @google-cloud/compute` first.
+/*
+    CSC 519: DevOps
+    Spring 2019
+    Name: Sujal
+    UnityID: ssujal
+*/
+
 const Compute = require('@google-cloud/compute');
 const compute = new Compute();
+const http = require('http');
+
+const zone = compute.zone('us-east1-b'); //region (continent-part-zone)
 
 class GCPProvider
 {
@@ -8,21 +17,32 @@ class GCPProvider
     async createInstance()
     {
         try {
-        const zone = await compute.zone('us-central1-a');
         const data = await zone.createVM(
-            'ubuntu-instance', 
-            { os: 'ubuntu' }
+            'myinstance', //configuration name 
+            { 
+                os: 'ubuntu', // OS definition
+                http: true    // provide external IP
+            }
         );
         const operation = data[1];
         await operation.promise();
-        // Virtual machine created.
-        } catch (error) {
-        console.error(error);
+        
+            console.log('Virtual machine created');
+        } 
+        catch (error) 
+        {
+            console.error(error);
         }
     }
+    // Prints the instance information
     async printInfo()
 	{
-		//To do
+        const vm = zone.vm('myinstance');
+
+        const metadata = await vm.getMetadata();
+        const ip = metadata[0].networkInterfaces[0].accessConfigs[0].natIP;
+
+        console.log(`IP address: http://${ip}`);
 	}
 };
 
@@ -31,7 +51,7 @@ async function provision()
     let client = new GCPProvider();
 
     await client.createInstance();
-    //await client.printInfo();
+    await client.printInfo();
 }
 
 (async () => {
