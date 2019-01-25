@@ -22,15 +22,12 @@ if( !config.token )
 	process.exit(1);
 }
 
-console.log(chalk.green(`Your token is: ${config.token}`));
-
 // Configure our headers to use our token when making REST api requests.
 const headers =
 {
 	'Content-Type':'application/json',
 	Authorization: 'Bearer ' + config.token
 };
-
 
 class DigitalOceanProvider
 {
