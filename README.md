@@ -5,7 +5,7 @@ Name: Sujal\
 Unity Id: ssujal
 
 ## Completed Tasks:
-:white_check_mark: Be able to automatically provision using a code api from two cloud providers. Logically, you should complete the provision workshop, to have digitalocean count as one. Choose one additional cloud provider below.
+:white_check_mark: Be able to automatically provision using a code api from **two cloud providers**. Logically, you should complete the provision workshop, to have digitalocean count as one. Choose one additional cloud provider below.
 
 :white_check_mark: Create a new VM, with a registered ssh key. This will allow you ssh directly into your account without being emailed a temporary root password.
 
@@ -14,6 +14,34 @@ Unity Id: ssujal
 :white_check_mark: Use proper and source control and configuration management practices e.g., using package managers and their associated files (package.json/requirements.txt) to declare software dependencies.
 
 ### Cloud servers:
-* [DigitalOcean](https://www.digitalocean.com/)
+**[DigitalOcean](https://www.digitalocean.com/)**
+1. The steps were similar to the ones performed in the workshop, with a personalised key from DigitalOcean.
+
+2. Create a ssh key locally and register your public key to DigitalOcean.
+
+3. Provide associated id using the API to your instance:
+```
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer $DOTOKEN" "https://api.digitalocean.com/v2/account/keys"
+```
+4. Log into the virtual machine instance via ssh:
+```
+ssh root@IP adress
+```
 ---
-* [Google Cloud Platform(GCP)](https://cloud.google.com/free/)
+**[Google Cloud Platform(GCP)](https://cloud.google.com/free/)**
+
+1. [Compute Engine API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/)
+
+2. Enable GCompute Engine API for your project.
+
+3. [Set up authentication key](https://cloud.google.com/docs/authentication/getting-started) and add it to you project.
+
+4. Make a new local directory where you want to configure your gcloud server.
+```
+npm init
+  -enter project details
+  -entry point
+  ...
+  ...
+```
+
