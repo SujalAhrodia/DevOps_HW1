@@ -1,3 +1,11 @@
+/*
+    CSC 519: DevOps
+    Spring 2019
+    Name: Sujal
+    UnityID: ssujal
+    Cloud Provider: DigitalOcean
+*/
+
 const got    = require("got");
 const chalk  = require('chalk');
 const os     = require('os');
