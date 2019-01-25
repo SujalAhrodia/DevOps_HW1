@@ -96,7 +96,7 @@ class DigitalOceanProvider
 			"region":region,
 			"size":"512mb",
 			"image":imageName,
-			"ssh_keys":[23911947],
+			"ssh_keys":[23911947], //ssh ID
 			"backups":false,
 			"ipv6":false,
 			"user_data":null,
@@ -146,7 +146,6 @@ class DigitalOceanProvider
 
 			// Print out IP address
 			console.log("IP Address:",droplet.networks.v4[0].ip_address);
-			//159.203.45.87
 		}
 
 	}
@@ -206,7 +205,7 @@ async function provision()
 
 	// Record the droplet id that you see print out in a variable.
 	// We will use this to interact with our droplet for the next steps.
-	  var dropletId = 129788918
+	//  var dropletId = 129788918
 
 	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	// BEFORE MOVING TO STEP FOR, REMEMBER TO COMMENT OUT THE `createDroplet()` call!!!
@@ -217,7 +216,7 @@ async function provision()
 	// https://developers.digitalocean.com/documentation/v2/#retrieve-an-existing-droplet-by-id
 	// REMEMBER POST != GET
 	// Most importantly, print out IP address!
-	 await client.dropletInfo(dropletId);
+	// await client.dropletInfo(dropletId);
 	
 	// #############################################
 	// #5 In the command line, ping your server, make sure it is alive!
@@ -233,8 +232,6 @@ async function provision()
 	// ping xx.xx.xx.xx
 }
 
-
-// Run workshop code...
 (async () => {
 	await provision();
 })();
