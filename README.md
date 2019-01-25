@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="200" height="200" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/North_Carolina_State_University_Athletic_logo.svg">
+</p>
+
 # HW1-DevOps
 CSC-519 Spring 2019
 
