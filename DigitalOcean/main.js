@@ -93,7 +93,7 @@ class DigitalOceanProvider
 			"region":region,
 			"size":"512mb",
 			"image":imageName,
-			"ssh_keys":[23911947], //ssh ID
+			"ssh_keys": null, 
 			"backups":false,
 			"ipv6":false,
 			"user_data":null,
@@ -202,7 +202,7 @@ async function provision()
 
 	// Record the droplet id that you see print out in a variable.
 	// We will use this to interact with our droplet for the next steps.
-	//  var dropletId = 130234626
+	  var dropletId = 130330125
 
 	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	// BEFORE MOVING TO STEP FOR, REMEMBER TO COMMENT OUT THE `createDroplet()` call!!!
@@ -222,7 +222,7 @@ async function provision()
 	// #############################################
 	// #6 Extend the client to DESTROY the specified droplet.
 	// https://developers.digitalocean.com/documentation/v2/#delete-a-droplet
-	// await client.deleteDroplet(dropletId);
+	 await client.deleteDroplet(dropletId);
 
 	// #############################################
 	// #7 In the command line, ping your server, make sure it is dead!
